@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-eks-projec-deployment
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: flask-eks-projec
+
+  template:
+    metadata:
+      labels:
+        app: flask-eks-projec
+
+    spec:
+      containers:
+        - name: flask-eks-projec
+          image: sirajahmad77/flask-eks-projec:latest
+          ports:
+            - containerPort: 5000
