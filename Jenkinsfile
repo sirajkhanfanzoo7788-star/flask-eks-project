@@ -52,7 +52,7 @@ pipeline {
                     retry(2) {
                         sh """
                             echo "Updating kubeconfig..."
-                            aws eks update-kubeconfig --region us-east-1 --name test-cluster
+                            aws eks update-kubeconfig --region us-east-1 --name New-EKS-Cluster-cluster 
 
                             echo "Applying Kubernetes manifests..."
                             kubectl apply -f deployment.yaml
